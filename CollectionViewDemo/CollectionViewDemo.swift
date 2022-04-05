@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import AloeStackView
 
-class CollectionViewDemo: UIViewController {
+class CollectionViewDemo: AloeStackViewController {
 
 
     override func viewDidLoad() {
