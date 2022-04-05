@@ -11,7 +11,7 @@ import AloeStackView
 class CollectionViewDemo: UIViewController {
 
 
-    var demoData = 
+    var movies = Movie.all
     var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -35,11 +35,11 @@ class CollectionViewDemo: UIViewController {
 extension CollectionViewDemo: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        <#code#>
+        movies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        movies[section].
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
