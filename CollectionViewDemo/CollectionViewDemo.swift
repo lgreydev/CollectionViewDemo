@@ -11,6 +11,7 @@ import AloeStackView
 class CollectionViewDemo: UIViewController {
 
 
+    var demoData = 
     var collectionView: UICollectionView!
 
     override func viewDidLoad() {
