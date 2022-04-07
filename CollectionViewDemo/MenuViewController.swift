@@ -10,16 +10,8 @@ import AloeStackView
 
 class MenuViewController: UIViewController {
 
-    var data = [UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green]
-
-
-    override func loadView() {
-        let view = UIView()
-        self.view = view
-        self.view.backgroundColor = .blue
-    }
-
-    lazy var stackView: UIStackView = {
+    // MARK: - Private Properties
+    private lazy var stackView: UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .vertical
@@ -29,29 +21,32 @@ class MenuViewController: UIViewController {
         return sv
     }()
 
-    lazy var plainViewControllerButton: UIButton = {
+    private lazy var plainViewControllerButton: UIButton = {
         let bt = UIButton()
         bt.setTitle("Plain ViewController", for: .normal)
         bt.addTarget(self, action: #selector(goPlain), for: .touchDown)
         return bt
     }()
 
-    lazy var subclassedViewButton: UIButton = {
+    private lazy var subclassedViewButton: UIButton = {
         let bt = UIButton()
         bt.setTitle("Subclassed ViewController", for: .normal)
         bt.addTarget(self, action: #selector(goSubclass), for: .touchDown)
         return bt
     }()
 
-    @objc func goPlain() {
-        self.navigationController?.pushViewController(PlainViewController(), animated: true)
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "MenuViewController"
+        view.backgroundColor = .blue
+        view.addSubview(stackView)
+        addConstraints()
     }
 
-    @objc func goSubclass() {
-        self.navigationController?.pushViewController(SubViewController(), animated: true)
-    }
-
-    func addConstraints() {
+    // MARK: - Private Method
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -60,9 +55,13 @@ class MenuViewController: UIViewController {
         ])
     }
 
-    override func viewDidLoad() {
-        view.addSubview(stackView)
-        addConstraints()
+    // MARK: - Action Button
+    @objc func goPlain() {
+        self.navigationController?.pushViewController(PlainViewController(), animated: true)
+    }
+
+    @objc func goSubclass() {
+        self.navigationController?.pushViewController(SubViewController(), animated: true)
     }
 }
 
