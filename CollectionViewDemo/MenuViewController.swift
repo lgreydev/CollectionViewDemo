@@ -9,6 +9,10 @@ import UIKit
 import AloeStackView
 
 class MenuViewController: UIViewController {
+
+    var data = [UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green, UIColor.red, UIColor.green, UIColor.blue, UIColor.green, UIColor.purple, UIColor.orange, UIColor.blue, UIColor.green, UIColor.blue, UIColor.green]
+
+
     override func loadView() {
         let view = UIView()
         self.view = view
@@ -40,11 +44,11 @@ class MenuViewController: UIViewController {
     }()
 
     @objc func goPlain() {
-//        self.navigationController?.pushViewController(ViewController(), animated: true)
+        self.navigationController?.pushViewController(PlainViewController(), animated: true)
     }
 
     @objc func goSubclass() {
-//        self.navigationController?.pushViewController(ViewControllerSubClassedCell(), animated: true)
+        self.navigationController?.pushViewController(SubViewController(), animated: true)
     }
 
     func addConstraints() {
