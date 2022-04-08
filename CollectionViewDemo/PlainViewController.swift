@@ -17,7 +17,7 @@ class PlainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpSelf()
         setUpStackView()
     }
@@ -26,13 +26,15 @@ class PlainViewController: UIViewController {
         title = "PlainViewController"
         view.backgroundColor = .red
            // set the dataSource
-           self.collectionView.dataSource = self
+           collectionView.dataSource = self
            // set the delegate
-           self.collectionView.delegate = self
+           collectionView.delegate = self
+           // register the standard cell
+            collectionView.register(SubclassedCollectionViewCell.self, forCellWithReuseIdentifier: "SubclassedCell")
            // bounce at the bottom of the collection view
-           self.collectionView.alwaysBounceVertical = true
+           collectionView.alwaysBounceVertical = true
            // set the background to be white
-           self.collectionView.backgroundColor = .white
+           collectionView.backgroundColor = .white
     }
 
 
@@ -56,7 +58,10 @@ class PlainViewController: UIViewController {
 
 extension PlainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubclassedCell", for: indexPath) as! SubclassedCollectionViewCell
+        let data = data[indexPath.row]
+        cell.setupCell(colour: data)
+        return cell
     }
 
     // if the user clicks on a cell, display a message

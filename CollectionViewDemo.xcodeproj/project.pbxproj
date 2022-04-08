@@ -17,6 +17,7 @@
 		5E5A4D9827FC398300437B2C /* Cover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A4D9727FC398300437B2C /* Cover.swift */; };
 		5E5A4D9C27FEBA7A00437B2C /* PlainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A4D9B27FEBA7A00437B2C /* PlainViewController.swift */; };
 		5E5A4D9E27FEBB3400437B2C /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A4D9D27FEBB3400437B2C /* SubViewController.swift */; };
+		5EC5E131280010A2005523D4 /* SubclassedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5E130280010A2005523D4 /* SubclassedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5E5A4D9727FC398300437B2C /* Cover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cover.swift; sourceTree = "<group>"; };
 		5E5A4D9B27FEBA7A00437B2C /* PlainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainViewController.swift; sourceTree = "<group>"; };
 		5E5A4D9D27FEBB3400437B2C /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		5EC5E130280010A2005523D4 /* SubclassedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubclassedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				5E5A4D8F27FC2BAD00437B2C /* MenuViewController.swift */,
 				5E5A4D9B27FEBA7A00437B2C /* PlainViewController.swift */,
 				5E5A4D9D27FEBB3400437B2C /* SubViewController.swift */,
+				5EC5E130280010A2005523D4 /* SubclassedCollectionViewCell.swift */,
 				5E5A4D8427FC2B8200437B2C /* Assets.xcassets */,
 				5E5A4D8627FC2B8200437B2C /* LaunchScreen.storyboard */,
 				5E5A4D8927FC2B8200437B2C /* Info.plist */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E5A4D9627FC359000437B2C /* Movie.swift in Sources */,
+				5EC5E131280010A2005523D4 /* SubclassedCollectionViewCell.swift in Sources */,
 				5E5A4D7C27FC2B8000437B2C /* AppDelegate.swift in Sources */,
 				5E5A4D9E27FEBB3400437B2C /* SubViewController.swift in Sources */,
 				5E5A4D7E27FC2B8000437B2C /* SceneDelegate.swift in Sources */,
