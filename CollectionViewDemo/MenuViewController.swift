@@ -64,4 +64,3 @@ class MenuViewController: UIViewController {
         self.navigationController?.pushViewController(SubViewController(), animated: true)
     }
 }
-

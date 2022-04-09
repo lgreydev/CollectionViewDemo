@@ -21,25 +21,12 @@ class PlainViewController: UIViewController {
         setUpSelf()
         setUpStackView()
     }
+}
 
-    func setUpSelf() {
-        title = "PlainViewController"
-        view.backgroundColor = .red
-           // set the dataSource
-           collectionView.dataSource = self
-           // set the delegate
-           collectionView.delegate = self
-           // register the standard cell
-            collectionView.register(SubclassedCollectionViewCell.self, forCellWithReuseIdentifier: "SubclassedCell")
-           // bounce at the bottom of the collection view
-           collectionView.alwaysBounceVertical = true
-           // set the background to be white
-           collectionView.backgroundColor = .white
-    }
+// MARK: - Configure
+extension PlainViewController {
 
-
-
-    func setUpStackView() {
+    private func setUpSelf() {
         // create a layout to be used
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         // make sure that there is a slightly larger gap at the top of each row
@@ -53,9 +40,25 @@ class PlainViewController: UIViewController {
         // set the view to be this UICollectionView
         self.view = collectionView
     }
+
+    private func setUpStackView() {
+        title = "PlainViewController"
+        view.backgroundColor = .red
+           // set the dataSource
+           collectionView.dataSource = self
+           // set the delegate
+           collectionView.delegate = self
+           // register the standard cell
+            collectionView.register(SubclassedCollectionViewCell.self, forCellWithReuseIdentifier: "SubclassedCell")
+           // bounce at the bottom of the collection view
+           collectionView.alwaysBounceVertical = true
+           // set the background to be white
+           collectionView.backgroundColor = .white
+    }
 }
 
 
+// MARK: - Delegate DataSource
 extension PlainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubclassedCell", for: indexPath) as! SubclassedCollectionViewCell
